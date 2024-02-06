@@ -1,0 +1,48 @@
+
+Algo-Phrase
+
+var
+  phrase: chaine de caractere ;
+  nbMots, nbVoyelles, i: Integer;
+  ensemble1, ensemble2: array of Integer;
+  sum: Integer;
+
+debut
+  // Première tâche
+  ecrit('Entrez une phrase terminée par un point : ');
+  lire (phrase);
+  
+  nbMots := 1; 
+  nbVoyelles := 0;
+  
+  pour i := 1 to Longueur (phrase) 
+  debut 
+    if phrase[i] = ' ' then
+      nbMots := nbMots + 1
+    sinon si (phrase[i]) in ['A', 'E', 'I', 'O', 'U', 'Y'] then
+      nbVoyelles := nbVoyelles + 1;
+  fin ;
+  
+  ecrit ('Nombre de mots dans la phrase : ', nbMots);
+ecrit ('Nombre de voyelles dans la phrase : ', nbVoyelles);
+  
+  // Deuxième tâche
+  ensemble1 := [3, 1, 7, 9];
+  ensemble2 := [2, 4, 1, 9, 3];
+  
+  sum := 0;
+  
+  pour  i := bas(ensemble1) en haut (ensemble1) faire 
+  debut 
+    sinon (ensemble1[i] in ensemble2) alors 
+      somme:= somme + ensemble1[i];
+  fin ;
+  
+  pour i := bas (ensemble2) en haut  (ensemble2) faire 
+  debut 
+    sinon  (ensemble2[i] in ensemble1) then
+      somme:= somme+ ensemble2[i];
+  fin;
+  
+  ecrit ('La somme des éléments distincts des deux ensembles est : ', somme);
+fin .
